@@ -15,7 +15,7 @@ export async function getGuilds(token: string) {
                 name: guild.name,
                 image: guild.icon ? imageUrl(guild.id, guild.icon) : '/discord.jpeg'
             }
-        }).filter((guild) => guild !== null)
+        }).filter((guild) => guild !== null) as { id: string, name: string, image: string }[]
         return guilds
     }
     return null
